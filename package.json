@@ -1,0 +1,41 @@
+{
+  "name": "whatsapp-food-logger",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted WhatsApp bot that logs calories and macros from text, meal photos, and nutrition-label screenshots using your own Claude Code CLI login — no API key, no metered billing.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/padisaputra/whatsapp-food-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/padisaputra/whatsapp-food-logger/issues"
+  },
+  "homepage": "https://github.com/padisaputra/whatsapp-food-logger#readme",
+  "keywords": [
+    "whatsapp",
+    "calorie-tracker",
+    "macro-tracker",
+    "food-log",
+    "claude",
+    "baileys",
+    "self-hosted"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "setup": "node scripts/setup.js",
+    "relink": "node scripts/relink.js",
+    "dashboard": "node src/dashboard/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "baileys": "7.0.0-rc14",
+    "better-sqlite3": "^13.0.3",
+    "pino": "^9.0.0"
+  }
+}

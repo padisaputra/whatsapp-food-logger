@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>hero banner</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1600px; height: 420px; overflow: hidden;
+    background: #0b141a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap {
+    position: relative; width: 1600px; height: 420px; display: flex; align-items: center;
+    background:
+      radial-gradient(circle at 82% 20%, rgba(37,211,102,0.14), transparent 42%),
+      radial-gradient(circle at 10% 90%, rgba(37,211,102,0.08), transparent 38%),
+      #0b141a;
+  }
+  .grain {
+    position: absolute; inset: 0; opacity: 0.05; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .left {
+    position: relative; z-index: 1; padding-left: 90px; width: 900px;
+  }
+  .kicker {
+    color: #8696a0; font-size: 20px; letter-spacing: 0.01em; margin-bottom: 18px;
+  }
+  .kicker b { color: #25d366; font-weight: 600; }
+  h1 {
+    color: #f2f5f3; font-size: 58px; font-weight: 700; letter-spacing: -0.01em;
+    line-height: 1.08; margin-bottom: 22px;
+  }
+  .tagline {
+    color: #c3cdd3; font-size: 24px; line-height: 1.45; max-width: 620px; font-weight: 400;
+  }
+  .tagline b { color: #e9edef; font-weight: 600; }
+
+  .right {
+    position: relative; z-index: 1; margin-left: auto; margin-right: 90px;
+    width: 460px;
+  }
+  .phone {
+    background: #111b21; border-radius: 28px; padding: 18px 18px 20px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+  .phone .head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .phone .dot { width: 30px; height: 30px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; }
+  .phone .head .name { color: #e9edef; font-size: 15px; font-weight: 600; }
+  .phone .head .sub { color: #8696a0; font-size: 11.5px; }
+  .bubble-in {
+    background: #202c33; color: #e9edef; border-radius: 10px; border-top-left-radius: 2px;
+    padding: 11px 13px; font-size: 13.5px; line-height: 1.5; margin-bottom: 10px; max-width: 92%;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+  }
+  .bubble-out {
+    background: #005c4b; color: #e9edef; border-radius: 10px; border-top-right-radius: 2px;
+    padding: 10px 13px; font-size: 13.5px; margin-left: auto; margin-bottom: 10px; max-width: 70%;
+    text-align: right;
+  }
+  .row-out { display: flex; justify-content: flex-end; }
+  .totals { color: #79e2a5; font-family: "SF Mono", Menlo, Consolas, monospace; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grain"></div>
+    <div class="left">
+      <div class="kicker">self-hosted on <b>your</b> WhatsApp</div>
+      <h1>whatsapp-food-logger</h1>
+      <div class="tagline">
+        Text what you ate, or send a photo. Get <b>macros and daily totals</b> back,
+        no API key and no monthly bill.
+      </div>
+    </div>
+    <div class="right">
+      <div class="phone">
+        <div class="head">
+          <div class="dot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="9.5" r="1" fill="white" stroke="none"/><circle cx="15" cy="9.5" r="1" fill="white" stroke="none"/></svg>
+          </div>
+          <div>
+            <div class="name">Food Logger</div>
+            <div class="sub">online</div>
+          </div>
+        </div>
+        <div class="row-out"><div class="bubble-out">200g chicken breast, 150g rice</div></div>
+        <div class="bubble-in">&#8226; chicken breast &#183; 200g &#183; 330 kcal<br/>&#8226; white rice &#183; 150g &#183; 195 kcal<br/><br/><span class="totals">525 / 2000 kcal &#183; 1475 left</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

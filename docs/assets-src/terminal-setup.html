@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>terminal mock - setup wizard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 860px; background: #0b141a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .window {
+    width: 820px; margin: 20px auto; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    background: #1a1d21;
+  }
+  .bar {
+    display: flex; align-items: center; gap: 8px; padding: 12px 14px;
+    background: #2a2d31; border-bottom: 1px solid #000;
+  }
+  .bar .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .bar .dot.r { background: #ff5f57; }
+  .bar .dot.y { background: #febc2e; }
+  .bar .dot.g { background: #28c840; }
+  .bar .title { flex: 1; text-align: center; color: #9aa0a6; font-size: 12.5px; margin-right: 46px; }
+
+  .term {
+    padding: 20px 24px 28px; font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13.5px; line-height: 1.68; color: #d4d8dc; background: #1a1d21;
+  }
+  .prompt { color: #6fd38a; }
+  .cmd { color: #e9edef; }
+  .dim { color: #6b7278; }
+  .ok { color: #25d366; }
+  .q { color: #e9edef; }
+  .ans { color: #53bdeb; }
+  .blank { height: 6px; }
+  .code-block {
+    margin: 10px 0 12px 0; color: #e9edef;
+  }
+  .code-bar { color: #53bdeb; }
+  .code-line { font-weight: 600; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="title">node: whatsapp-food-logger (820&#215;40)</span>
+    </div>
+    <div class="term" id="term">
+      <div><span class="prompt">$</span> <span class="cmd">npm run setup</span></div>
+      <div class="blank"></div>
+      <div class="dim">&gt; whatsapp-food-logger@1.0.0 setup</div>
+      <div class="dim">&gt; node scripts/setup.js</div>
+      <div class="blank"></div>
+      <div>whatsapp-food-logger setup</div>
+      <div class="blank"></div>
+      <div><span class="ok">&#10003;</span> Node v20.11.0</div>
+      <div><span class="ok">&#10003;</span> Claude Code CLI installed and logged in</div>
+      <div class="q">WhatsApp number(s) allowed to use the bot &#8212; digits only, country code, no &quot;+&quot;, comma-separated for multiple clients</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">447700900123</span></div>
+      <div class="q">Timezone for day boundaries, IANA format (e.g. America/New_York) [Europe/London]</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">Europe/London</span></div>
+      <div class="q">Daily targets &#8212; enter them directly, or compute from a profile (weight/height/age/goal)? [direct/compute] (direct)</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">direct</span></div>
+      <div class="q">Daily kcal target (2000)</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">2200</span></div>
+      <div class="q">Daily protein target, g (150)</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">160</span></div>
+      <div class="q">Daily carbs target, g (200)</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">220</span></div>
+      <div class="q">Daily fat target, g (65)</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">70</span></div>
+      <div class="q">This bot&#39;s own WhatsApp number &#8212; the one it will link as a device (use a spare number, not your main one), digits only, country code, no &quot;+&quot;</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">447700900999</span></div>
+      <div class="q">Pairing with +447700900999 &#8212; correct? [Y/n]</div>
+      <div><span class="prompt">&gt;</span> <span class="ans">y</span></div>
+      <div class="blank"></div>
+      <div><span class="ok">&#10003;</span> <span class="dim">wrote /Users/alex/whatsapp-food-logger/.env</span></div>
+      <div class="blank"></div>
+      <div>Now let&#39;s link your WhatsApp number.</div>
+      <div class="code-block">
+        <div class="code-bar">============================================</div>
+        <div class="code-line">&nbsp;&nbsp;PAIRING CODE:&nbsp;&nbsp;ABCD-EFGH</div>
+        <div class="code-bar">============================================</div>
+      </div>
+      <div>On the phone with this WhatsApp number:</div>
+      <div>&nbsp;&nbsp;1. Open WhatsApp</div>
+      <div>&nbsp;&nbsp;2. Settings -&gt; Linked Devices -&gt; Link a Device</div>
+      <div>&nbsp;&nbsp;3. Tap &quot;Link with phone number instead&quot;</div>
+      <div>&nbsp;&nbsp;4. Enter the code above</div>
+      <div class="blank"></div>
+      <div class="dim">Valid for about a minute. If it expires, a fresh code prints automatically.</div>
+      <div class="blank"></div>
+      <div><span class="ok">&#10003;</span> Linked as 447700900999:12@s.whatsapp.net.</div>
+      <div class="dim">Run `npm start` (see README for pm2/launchd so it stays running 24/7).</div>
+      <div class="blank"></div>
+      <div><span class="prompt">$</span> <span class="cursor">&#8203;</span></div>
+    </div>
+  </div>
+</body>
+</html>
